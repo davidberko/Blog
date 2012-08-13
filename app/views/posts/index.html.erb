@@ -13,16 +13,22 @@ Blog post <div><%= p.text_area :body %></div>
 <% end %>
 	
 <% @posts.each do |post| %>
-
-	<%= "#{post.author}: " %>
-	<%= post.body %><br>
-	<%= post.comments.pluck('text') %>
+  <div class="post-body">
+  	<%= "#{post.author}: " %>
+  	<%= post.body %><br>
+  </div>  
+    <div class="comment"><% post.comments.each do |c| %>
+      <%= "#{c.name}: "%>
+      <%= c.text %>
+    </div>
+    <% end %>
 
 
 <%= form_for post.comments.build do |f| %>
-		<%=  f.text_field :text %>
+		<div>Name:    <%=  f.text_field :name %></div>
+    <div>Comment: <%=  f.text_field :text %></div>
 		<%= f.hidden_field :post_id %>
-		<%=  f.submit "comment" %>
+		<%=  f.submit "comment" %><br>
 	<% end %>
 <% end %>
 
