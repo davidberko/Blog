@@ -1,0 +1,12 @@
+<% @post ||= Post.new %>
+<%= form_for(@post) do |f| %>
+
+Author <div><%= f.text_field :author %></div>
+Email <div><%= f.text_field :email %></div>
+
+Blog post <div><%= f.text_area :body %></div>
+
+<div><%= f.submit "save" %></div>
+
+<% end %>
+	

@@ -1,0 +1,14 @@
+<h1>Welcome to my blog!</h1>
+
+<%= render :file => 'posts/new.html.erb' %>
+
+<% @posts.each do |post| %>
+
+<%= "#{post.author}: " %>
+<%= post.body %><br>
+
+
+<% end %>
+
+
+
