@@ -1,3 +1,22 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.post-body {
+  background-color: LightGrey;  
+  border-style: solid;
+  border-color: White;
+}
+
+div.comment {
+  margin-top: 1cm;
+  margin-bottom: 1cm;
+}
+ 
+div.comment-form {
+  margin-top: 1cm;
+  margin-bottom: 2cm;
+  background-color: #E8E8E8;
+  border-style: solid;
+  border-color: White;
+}

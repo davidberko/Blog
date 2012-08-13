@@ -14,16 +14,20 @@ Blog post <div><%= p.text_area :body %></div>
 	
 <% @posts.each do |post| %>
   <div class="post-body">
-  	<%= "#{post.author}: " %>
-  	<%= post.body %><br>
+  	<p>
+      <%= "#{post.author}: " %>
+  	  <%= post.body %><br>
+    </p>
   </div>  
+    
+<h3>Comments</h3>
     <div class="comment"><% post.comments.each do |c| %>
       <%= "#{c.name}: "%>
-      <%= c.text %>
+      <%= c.text %><br>
     </div>
     <% end %>
 
-
+<div class="comment-form">
 <%= form_for post.comments.build do |f| %>
 		<div>Name:    <%=  f.text_field :name %></div>
     <div>Comment: <%=  f.text_field :text %></div>
@@ -31,7 +35,7 @@ Blog post <div><%= p.text_area :body %></div>
 		<%=  f.submit "comment" %><br>
 	<% end %>
 <% end %>
-
+</div>
 
 
 
