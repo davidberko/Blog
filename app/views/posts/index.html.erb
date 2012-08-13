@@ -1,14 +1,31 @@
 <h1>Welcome to my blog!</h1>
 
-<%= render :file => 'posts/new.html.erb' %>
+<% @post = Post.new %>
+<%= form_for(@post) do |p| %>
 
-<% @posts.each do |post| %>
+Author <div><%= p.text_field :author %></div>
+Email <div><%= p.text_field :email %></div>
 
-<%= "#{post.author}: " %>
-<%= post.body %><br>
+Blog post <div><%= p.text_area :body %></div>
 
+<div><%= p.submit "save" %></div>
 
 <% end %>
+	
+<% @posts.each do |post| %>
+
+	<%= "#{post.author}: " %>
+	<%= post.body %><br>
+	<%= post.comments.pluck('text') %>
+
+
+<%= form_for post.comments.build do |f| %>
+		<%=  f.text_field :text %>
+		<%= f.hidden_field :post_id %>
+		<%=  f.submit "comment" %>
+	<% end %>
+<% end %>
+
 
 
 
