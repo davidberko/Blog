@@ -24,4 +24,10 @@ class PostsController < ApplicationController
   def destroy
 
   end
+
+  def comment
+    @post = Post.find(parmas[:id])
+    @post.build(params[:comment])
+    redirect_to posts_path
+  end
 end
