@@ -2,10 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+  background-color: #99CCFF;
+}
 div.post-body {
   background-color: LightGrey;  
   border-style: solid;
   border-color: White;
+  width: 700px;
+  text-align: center;
 }
 
 div.comment {
@@ -19,4 +24,6 @@ div.comment-form {
   background-color: #E8E8E8;
   border-style: solid;
   border-color: White;
+  width: 700px;
+  text-align: center;
 }
